@@ -21,11 +21,15 @@ body{
 nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: rgba(0, 0, 0, 0.4);
+    font-family: var(--font-fam-title);
+    color: white;
+    align-items: center;
 }
+
 .logo img{
-    width: 100px;
+    width: 50px;
     margin: 10px 40px;
     transition: all 0.4s;
 
@@ -34,21 +38,26 @@ nav {
     transform: scale(1.1);
 }
 .nav-link{
-    font-family: var(--font-fam-title);
-    text-transform: uppercase;
-    color: white;
     text-decoration: none;
     display: flex;
     align-items: center;
 }
 .nav-link a{
+    margin-right: 20px;
     color: white;
     text-decoration: none;
-    margin: 0 40px;
-    font-size: 2em;
+    text-transform: capitalize;
     transition: all 0.4s;
 }
 .nav-link a:hover{
     color:var(--color-text-hover);
     transform: scale(1.1);
+}
+
+
+
+.main-content{
+    background-image: url(/assets/mainimg.jpeg);
+    background-position: center;
+    height: 80vh;
 }
