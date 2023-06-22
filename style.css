@@ -16,6 +16,9 @@
   list-style: none;
   text-decoration: none;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 body{
     background-color: var(--bg-color);
 }
@@ -24,7 +27,7 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.391);
+    background-color: rgba(33, 39, 40, 0.365);
     position: fixed;
     z-index: 10;
     top: 0;
@@ -63,8 +66,9 @@ nav {
     color:var(--color-text-hover);
     transform: scale(1.1);
 }
+
 main{
-    padding: 6% 10%;
+    padding: 4% 10%;
 }
 .top-main-content{
     font-family: var(--font-fam-title);
@@ -90,5 +94,5 @@ main{
 .main-content{
     background-image: url(./assets/mainimg.jpeg);
     background-position: center;
-    height: 90vh;
+    height: 80vh;
 }
