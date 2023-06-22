@@ -1,37 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Prata&display=swap');
 
 :root {
-    --font-fam-title: 'Bodoni Moda', serif;
-    --font-fam-corps: 'Oswald', sans-serif;
-    --bg-color : rgb(41, 41, 41);
-    --color-text: white;
-    --color-text-hover: rgb(130, 130, 69);
+    --font-fam-title: 'Prata', serif;
+    --font-fam-corps: 'Inter', sans-serif;
+    --bg-color : #212728ff;
+    --color-text: #FFE59A;
+    --color-text-hover: #938B26;
 }
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 body{
     background-color: var(--bg-color);
-    
 }
 
 nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.391);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
     font-family: var(--font-fam-title);
+    font-size: 1.5em;
     color: white;
-    align-items: center;
+    align-items: center; 
+    padding:0 10%;
+    backdrop-filter: blur(5px);
 }
 
 .logo img{
-    width: 50px;
-    margin: 10px 40px;
+    width: 100px;
+    margin: 10px 0;
     transition: all 0.4s;
 
 }
@@ -44,21 +53,42 @@ nav {
     align-items: center;
 }
 .nav-link a{
-    margin-right: 20px;
-    color: white;
+    margin-right: 40px;
+    color: var(--color-text);
     text-decoration: none;
-    text-transform: capitalize;
+    text-transform: uppercase;
     transition: all 0.4s;
 }
 .nav-link a:hover{
     color:var(--color-text-hover);
     transform: scale(1.1);
 }
-
-
-
+main{
+    padding: 6% 10%;
+}
+.top-main-content{
+    font-family: var(--font-fam-title);
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+.top-main-content h1 {
+    font-size: 16em;
+    color: var(--color-text-hover);
+}
+.top-main-content h3 {
+    display: flex;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    color: var(--color-text-hover);
+    font-size: 2em;
+    margin: 0 40px;
+}
 .main-content{
-    background-image: url(/assets/mainimg.jpeg);
+    background-image: url(./assets/mainimg.jpeg);
     background-position: center;
     height: 90vh;
 }
