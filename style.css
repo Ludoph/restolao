@@ -32,6 +32,7 @@ nav {
     z-index: 10;
     top: 0;
     left: 0;
+    height: 12vh;
     width: 100vw;
     font-family: var(--font-fam-title);
     font-size: 1.5em;
@@ -42,8 +43,10 @@ nav {
 }
 
 .logo img{
-    width: 100px;
-    margin: 10px 0;
+    position: absolute;
+    top: 0;
+    width: 160px;
+    margin: 10px 140px;
     transition: all 0.4s;
 
 }
@@ -71,28 +74,25 @@ main{
     padding: 4% 10%;
 }
 .top-main-content{
+    background-image: url(./assets/img-laos.jpg);
+    background-size: cover;
     font-family: var(--font-fam-title);
     display: flex;
     flex-direction: row;
+    align-items: center;
     height: 80vh;
-    justify-content: space-between;
-    margin: 40px 0;
-}
-.top-main-content h1 {
-    font-size: 16em;
-    color: var(--color-text-hover);
+    justify-content: center;
+    margin: 38px 0;
+    margin-bottom: 100px;
 }
 .top-main-content h3 {
+    margin-top: 60px;
+    font-size: 4em;
+    color: var(--color-text);
     display: flex;
-    justify-content: center;
-    writing-mode: vertical-rl;
-    transform: rotate(-180deg);
-    color: var(--color-text-hover);
-    font-size: 2em;
-    margin: 0 40px;
 }
 .main-content{
-    background-image: url(./assets/mainimg.jpeg);
+    background-image: url(./assets/mainimg1.jpg);
     background-position: center;
     height: 80vh;
 }
