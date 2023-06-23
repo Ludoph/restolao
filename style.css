@@ -74,8 +74,8 @@ main{
     padding: 4% 10%;
 }
 .top-main-content{
-    background-image: url(./assets/img-laos.jpg);
-    background-size: cover;
+    position: relative;
+    overflow: hidden;
     font-family: var(--font-fam-title);
     display: flex;
     flex-direction: row;
@@ -83,7 +83,23 @@ main{
     height: 80vh;
     justify-content: center;
     margin: 38px 0;
-    margin-bottom: 100px;
+    margin-bottom: 140px;
+    box-shadow: 7px 5px 5px #00000060;
+}
+.top-main-content::before {
+    background-image: url(./assets/img-laos.jpg);
+    background-size: cover;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: all 15s;
+}
+.top-main-content:hover::before{
+    transform: scale(1.4)
 }
 .top-main-content h3 {
     margin-top: 60px;
@@ -92,7 +108,8 @@ main{
     display: flex;
 }
 .main-content{
-    background-image: url(./assets/mainimg1.jpg);
+    background-image: url(./assets/mainimg-1.jpg);
     background-position: center;
     height: 80vh;
+    box-shadow: 7px 5px 5px #00000060;
 }
