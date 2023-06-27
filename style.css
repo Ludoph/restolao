@@ -23,7 +23,7 @@ body{
     background-color: var(--bg-color);
 }
 
-nav {
+header .logo {
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -44,7 +44,7 @@ nav {
     top: 0;
     width: 160px;
     margin: 10px 140px;
-    transition: all 0.4s;
+    transition: all 0.8s;
 
 }
 .logo img:hover{
@@ -53,9 +53,9 @@ nav {
 .btn-menu-burger{
     display: flex;
     position: fixed;
-    z-index: 10;
+    z-index: 15;
     top: 50px;
-    right: 60px;
+    right: 80px;
     height: 30px;
     width: 50px;
     border: none;
@@ -64,8 +64,10 @@ nav {
     background-color: transparent;
     text-decoration: none;
     align-items: center;
+    transition: all 0.4s;
 }
-.triangle {
+.btn-menu-burger:hover{
+    transform: scale(1.2);
 }
 .line {
     position: absolute;
@@ -85,26 +87,56 @@ nav {
 }
 .btn-menu-burger.active .l1 {
   transform: translateY(0px) rotate(135deg);
-  background-color: #FFE59A;
 }
 .btn-menu-burger.active .l2 {
-  transform: translateY(0px) rotate(-135deg);
-  background-color: #FFE59A;
+  transform: translateY(0px) rotate(-315deg);
 }
-.nav-link {
-    display: none;
+.menu-burger {
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    z-index: 9;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(100%);
+    transition: all 0.8s;
+    background-color: #faecc2;
+}
+.menu-burger.active{
+    transform: translateX(0);
+}
+.nav-link{
+    display: flex;
+    flex-direction: column;
+    margin: 5% 20%;
 }
 .nav-link a{
-    margin-left: 40px;
-    color: var(--color-text);
+    color: var(--color-text-hover);
     text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.4s;
+    font-size: 4em;
+    margin: 40px 0;
+    text-transform: capitalize;
+    transition: all 0.8s;
 }
 .nav-link a:hover{
     color:var(--color-text-hover);
-    transform: scale(1.1);
+    transform: scale(1.1) translateX(20%);
 }
+.menu-burger img{
+    object-fit: contain;
+    height: 80vh;
+    width: 40%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+
+
+
 
 main{
     padding: 4% 10%;
@@ -169,4 +201,145 @@ h3.text-home-content {
     justify-content: center;
     padding: 2% 5%;
     backdrop-filter: blur(5px);
+}
+
+.lacarte{
+    margin: 10% 0;
+}
+.entrees h1{
+    text-align: center;
+    color: #938B26;
+    text-transform: capitalize;
+    font-style: italic;
+    font-size: 3em;
+    margin: 40px 0;
+    font-family: var(--font-fam-title);
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 355px;
+    height: 450px;
+    background: #000;
+    overflow: hidden;
+    box-shadow: 7px 5px 5px #00000060;
+}
+
+.poster {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.poster::before {
+    content: '';
+    position: absolute;
+    bottom: -45%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: .3s;
+}
+
+.card:hover .poster::before {
+    bottom: 0;
+}
+
+.poster img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .8s;
+}
+
+.card:hover .poster img {
+    transform: scale(1.1);
+}
+
+.details {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1.5em 1.5em 2em;
+    background: #000a;
+    backdrop-filter: blur(16px) saturate(120%);
+    transition: .7s;
+    color: #fff;
+    z-index: 2;
+}
+.card:hover .details {
+    bottom: 0;
+}
+.details h1 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.details .rating {
+    position: relative;
+    margin-bottom: 15px;
+    display: flex;
+    gap: .25em;
+}
+
+.details .rating i {
+    color: #e3c414;
+}
+
+.details .rating span {
+    margin-left: 0.25em;
+}
+
+
+.details .desc {
+    color: #fff;
+    opacity: .8;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+.details .cast h3 {
+    margin-bottom: .5em;
+}
+
+.details .cast ul {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    width: 100%;
+}
+
+.details .cast ul li {
+    list-style: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1.5px solid #fff;
+}
+
+.details .cast ul li img {
+    width: 100%;
+    height: 100%;
 }
