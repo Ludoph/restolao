@@ -25,21 +25,18 @@ body{
 
 nav {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    background-color: rgba(33, 39, 40, 0.365);
     position: fixed;
-    z-index: 10;
+    z-index: 9;
     top: 0;
     left: 0;
     height: 12vh;
     width: 100vw;
     font-family: var(--font-fam-title);
-    font-size: 1.5em;
+    font-size: 1em;
     color: white;
     align-items: center; 
     padding:0 10%;
-    backdrop-filter: blur(5px);
 }
 
 .logo img{
@@ -53,13 +50,52 @@ nav {
 .logo img:hover{
     transform: scale(1.1);
 }
-.nav-link{
-    text-decoration: none;
+.btn-menu-burger{
     display: flex;
+    position: fixed;
+    z-index: 10;
+    top: 50px;
+    right: 60px;
+    height: 30px;
+    width: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    text-decoration: none;
     align-items: center;
 }
+.triangle {
+}
+.line {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-right: 70px solid #938B26;
+    transition: transform 0.4s ease-out, opacity 0.1s ease-out;
+}
+.l1 {
+  transform: translateY(-2px) rotate(-20deg);
+}
+.l2 {
+  transform: translateY(5px) rotate(-15deg);
+}
+.btn-menu-burger.active .l1 {
+  transform: translateY(0px) rotate(135deg);
+  background-color: #FFE59A;
+}
+.btn-menu-burger.active .l2 {
+  transform: translateY(0px) rotate(-135deg);
+  background-color: #FFE59A;
+}
+.nav-link {
+    display: none;
+}
 .nav-link a{
-    margin-right: 40px;
+    margin-left: 40px;
     color: var(--color-text);
     text-decoration: none;
     text-transform: uppercase;
@@ -78,7 +114,6 @@ main{
     overflow: hidden;
     font-family: var(--font-fam-title);
     display: flex;
-    flex-direction: row;
     align-items: center;
     height: 80vh;
     justify-content: center;
@@ -101,15 +136,37 @@ main{
 .top-main-content:hover::before{
     transform: scale(1.4)
 }
-.top-main-content h3 {
-    margin-top: 60px;
-    font-size: 4em;
-    color: var(--color-text);
-    display: flex;
-}
 .main-content{
-    background-image: url(./assets/mainimg-1.jpg);
-    background-position: center;
     height: 80vh;
     box-shadow: 7px 5px 5px #00000060;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-content::before{
+    background-image: url(./assets/mainimg-1.jpg);
+    background-position: center;
+    background-size: cover;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: all 15s;
+}
+.main-content:hover::before{
+    transform: scale(1.4)
+}
+h3.text-home-content {
+    font-size: 3em;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 5%;
+    backdrop-filter: blur(5px);
 }
